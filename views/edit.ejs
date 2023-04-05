@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/edit.css" />
+    <title>Edit Captains Log</title>
+</head>
+<body>
+    <a href="/logs/">Back to Index</a>
+    <h1>Edit Log</h1>
+    <form action="/logs/<%=log._id%>?_method=PUT" method="POST">
+      Title: <input type="text" name="title" value="<%=log.title%>" /><br />
+      Entry: <input type="text" name="entry" value="<%=log.entry%>" /><br />
+
+      Completed: <input type="checkbox" name="completed" <% if(log.completed
+      === true){ %> checked <% } %> />
+      <br />
+      <input type="submit" value="Submit Changes" />
+    </form>
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Captains Log </title>
+	</head>
+
+	<body>
+
+	<h1>Captains Log Index Page</h1>
+	<ul>
+		<% logs.forEach(log => { %>
+
+    <li>
+
+	<a href="/logs/<%= log._id %>"> <%=log.title %> </a>
+
+	<form action="/logs/<%=log.id %>?_method=DELETE" method="POST">
+	  <input type="submit" value="DELETE" />
+	</form>
+
+	<a href="/logs/<%=log._id %>/edit">Edit</a>
+
+    </li>
+
+	<% }) %>
+
+	</ul>
+    
+    <nav>
+	<a href="/logs/new">Add a New Log</a>
+    </nav>
+
+	</body>
+</html>
+
